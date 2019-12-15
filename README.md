@@ -3,6 +3,34 @@ aws-dyndns
 
 Manage a dynamic home IP address with an AWS hosted route53 domain
 
+# docker
+
+Builds are available at https://hub.docker.com/r/jitl/aws-dyndns
+
+Docker image usage:
+
+```
+$ docker run -i --rm \
+  -e AWS_CONFIG_FILE=/aws_config \
+  -v ~/.aws/credentials:/aws_config:ro jitl/aws-dyndns --help
+
+usage: dns_update.py [-h] [--profile PROFILE] --domain DOMAIN
+                     [--record RECORD] [--zone ZONE] [--ttl TTL]
+
+Manage a dynamic home IP address with an AWS hosted route53 domain
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --profile PROFILE, -p PROFILE
+                        AWS credential profile
+  --domain DOMAIN, -d DOMAIN
+                        Domain to modify
+  --record RECORD, -r RECORD
+                        Record to modify
+  --zone ZONE, -z ZONE  AWS hosted zone id
+  --ttl TTL             Record TTL
+```
+
 # setup
 
 In order to use this tool, you need to set up authentication credentials. Credentials for your AWS account can be found in the [IAM Console](https://console.aws.amazon.com/iam/home). You can create or use an existing user or follow the instructions below to setup a new user.
