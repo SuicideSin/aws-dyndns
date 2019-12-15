@@ -13,4 +13,4 @@ COPY requirements.txt ./
 RUN pip install -r ./requirements.txt
 COPY dns_update.py ./
 
-ENTRYPOINT ['python', './dns_update.py']
+ENTRYPOINT ["python", "./dns_update.py"]
